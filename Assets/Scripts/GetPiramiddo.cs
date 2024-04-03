@@ -2,33 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreasureController : MonoBehaviour
+public class GetPiramiddo : MonoBehaviour
 {
-    Animator anim;
     bool inRange;
-    bool treasureGet;
-    public GameObject treasure;
+    bool piramiddoGet;
+    public GameObject piramiddo;
     Renderer rend;
-
     GameContoller gameContoller;
     // Start is called before the first frame update
     void Start()
     {
+        rend = piramiddo.GetComponent<Renderer>();
         gameContoller = GameObject.Find("GameController").GetComponent<GameContoller>();
-        anim = GetComponent<Animator>();
-        rend = treasure.GetComponent<Renderer>();
-        treasureGet = false;
+        piramiddoGet = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) & inRange & !treasureGet & IsVisible())
+        if (Input.GetKeyDown(KeyCode.F) && !piramiddoGet)
         {
-            treasureGet = true;
-            gameContoller.treasureNum++;
-            anim.SetBool("PutF", true);
+            if (IsVisible() && inRange)
+            {
+                piramiddoGet = true;
+                gameContoller.piramiddoNum++;
+                Destroy(piramiddo);
+            }
         }
+        
     }
 
     private void OnTriggerEnter(Collider other)
