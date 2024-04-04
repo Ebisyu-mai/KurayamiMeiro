@@ -6,10 +6,11 @@ public class GameContoller : MonoBehaviour
 {
     public int piramiddoNum = 0;
     public int treasureNum = 0;
+    public GameObject clearWarp;
     // Start is called before the first frame update
     void Start()
     {
-        
+        clearWarp.SetActive(false);
     }
 
     // Update is called once per frame
@@ -17,7 +18,7 @@ public class GameContoller : MonoBehaviour
     {
         if (piramiddoNum == 3)
         {
-            //Debug.Log("OK");
+            clearWarp.SetActive(true);
         }
     }
 }
