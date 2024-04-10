@@ -65,4 +65,12 @@ public class PlayerController : MonoBehaviour
             speed /= 2;
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Warp")
+        {
+            Debug.Log("Clear");
+        }
+    }
 }
