@@ -28,7 +28,10 @@ public class GameContoller : MonoBehaviour
     public int[] boxDirection;
     // Start is called before the first frame update
     void Start()
-    { 
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
         clearWarp.SetActive(false);
         image1 = heart1.GetComponent<Image>();
         image2 = heart2.GetComponent<Image>();
