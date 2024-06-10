@@ -26,7 +26,14 @@ public class TrapController : MonoBehaviour
             trapMove = false;
             trapOK = false;
             anim.SetBool("StepOn", true);
-            gameContoller.hp--;
+            if (gameContoller.nagagutu)
+            {
+                gameContoller.nagagutuLimit--;
+            }
+            else
+            {
+                gameContoller.hp--;
+            }
             StartCoroutine("WaitTime");
         }
     }
