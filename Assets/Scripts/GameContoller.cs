@@ -37,8 +37,14 @@ public class GameContoller : MonoBehaviour
     public bool nagagutu;
     public int nagagutuLimit = 3;
 
+    //ScoreText
+    public GameObject treasureText;
+    Text treasureNumText;
+
     void Start()
     {
+        treasureNumText = treasureText.GetComponent<Text>();
+
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 
@@ -79,6 +85,8 @@ public class GameContoller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        treasureNumText.text = "× " + treasureNum;
+
         if (piramiddoNum == 3)
         {
             clearWarp.SetActive(true);

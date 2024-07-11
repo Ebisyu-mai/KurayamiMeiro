@@ -6565,6 +6565,7 @@ MonoBehaviour:
   handLight: {fileID: 4239987585010741920}
   nagagutu: 0
   nagagutuLimit: 3
+  treasureText: {fileID: 329540402}
 --- !u!1001 &670821237
 PrefabInstance:
   m_ObjectHideFlags: 0
